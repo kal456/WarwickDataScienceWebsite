@@ -162,6 +162,28 @@ ul.hamburger li:nth-child(2) {
   opacity: 0.9;
   height: 600px;
 }
+
+.heightTeamBox{
+  height: 600px;
+}
+
+@media screen and (min-width: 1500px) {
+
+.aboutTextHeader{
+  padding-right: 150px;
+  padding-left: 150px;
+}
+
+.aboutText{
+  font-size: 19px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 150px;
+  padding-left: 150px;
+  }
+}
+
+
 @media screen and (min-width: 800px){
   .bgImage{
     height: 1000px;
@@ -219,6 +241,7 @@ ul.hamburger li:nth-child(2) {
   .nav ul#menu li {
     display: inline-block;
     margin-right: -5px;
+    height: 52px;
   }
 }
 
