@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
+<html lang="en" dir="ltr"><head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/XFbMRQK/55470268-183450445871313-5350417395452215296-n.jpg">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://kit.fontawesome.com/b0e45b6dae.js"></script>
     <title>Warwick Data Science</title>
   </head>
   <body>
@@ -21,8 +20,10 @@
         <ul id="menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#team">Our Team</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#home"><div class="popup" onclick="myFunction()">Our Team
+              <span class="popuptext" id="myPopup">Section comming soon</span></div></a></li>
+          <li><a href="#home"><div class="popup" onclick="myFunction2()">Contact
+              <span class="popuptext" id="myPopup2">Section comming soon</span></div></a></li>
         </ul>
       </nav>
     </header>
@@ -30,7 +31,9 @@
 <!-- Header image and Titles -->
 <header class="bgImage w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-left w3-text-white" style="padding:48px">
+    <!-- TODO We will need to replace all div's so we can make it SEO compatible -->
     <span class="w3-jumbo">Warwick Data Science</span><br>
+    <!-- TODO we will need this sub menu changed to our motto - soon -->
     <span class="w3-xlarge"> Development is the key to success. Learn more about Data Science at Warwick!</span>
     <!-- <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p> -->
   </div>
@@ -56,98 +59,40 @@
     </div>
     <div class="w3-col m6">
       <!-- TODO: reduce dimensions on these photos -->
-      <img class="w3-image w3-round-large" src="https://images.pexels.com/photos/7096/people-woman-coffee-meeting.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="University" width="700" height="394">
+      <img class="w3-image w3-round-large" src="img/about.jpg" alt="University" width="700" height="394">
     </div>
   </div>
 </div>
 
 
-<!-- Team Section -->
-<div class="w3-container" style="padding:128px 16px; background-image: linear-gradient(to right top, #2a1f55, #2b1f55, #2b1f56, #2c2056, #2c2056, #2f235a, #33275d, #362a61, #3e3169, #463871, #4e407a, #564782);" id="team">
-
-  <h3 class="w3-center w3-xxlarge" style="color: white">THE TEAM</h3>
-  <p class="w3-center w3-large" style="color: white">The ones who run this Society</p>
-
-  <div class="w3-row-padding" style="margin-top:64px">
-
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-card w3-light-grey heightTeamBox">
-          <img src="ResizedPhotos/Ifti.jpg" alt="Ifti" style="width:100%">
-          <div class="w3-container">
-            <h3>Iftikhaar</h3>
-            <p class="w3-opacity">Co-founder</p>
-            <p style="padding-bottom: 20px">Description Coming Soon. We will not post any personal photo without your consent!</p>
-            <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
-          </div>
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-card w3-light-grey heightTeamBox">
-          <img src="ResizedPhotos/Matt.jpg" alt="Horia" style="max-width:100%">
-          <div class="w3-container">
-            <h3>Matthew</h3>
-            <p class="w3-opacity">Co-founder</p>
-            <p style="padding-bottom: 20px">Description Coming Soon. We will not post any personal photo without your consent!</p>
-            <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-card w3-light-grey heightTeamBox">
-          <img src="ResizedPhotos/Imran.jpg" alt="Imran" style="width:100%">
-          <div class="w3-container">
-            <h3>Imran</h3>
-            <p class="w3-opacity">Co-founder</p>
-            <p style="padding-bottom: 20px">Description Coming Soon. We will not post any personal photo without your consent!</p>
-            <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-card w3-light-grey heightTeamBox">
-          <img src="ResizedPhotos/Horia.jpg" alt="Matthew" style="max-width:100%">
-          <div class="w3-container">
-            <h3>Horia</h3>
-            <p class="w3-opacity">Technology Team Leader</p>
-            <p style="padding-bottom: 20px">Description Coming Soon. We will not post any personal photo without your consent!</p>
-            <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
-          </div>
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-card w3-light-grey heightTeamBox">
-          <img src="ResizedPhotos/Thomas.jpg" alt="Thomas" style="width:100%">
-          <div class="w3-container">
-            <h3>Thomas</h3>
-            <p class="w3-opacity">Outreach Team Leader</p>
-            <p style="padding-bottom: 20px">Description Coming Soon. We will not post any personal photo without your consent!</p>
-            <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-card w3-light-grey heightTeamBox">
-          <img src="ResizedPhotos/Alex.jpg" alt="Alex" style="max-width:100%">
-          <div class="w3-container">
-            <h3>Alex</h3>
-            <p class="w3-opacity">Co-founder</p>
-            <p style="padding-bottom: 20px">Description Coming Soon. We will not post any personal photo without your consent!</p>
-            <!-- <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-
+<div class="" style="background: white">
+  <div class="tableL">
+    <ul class="footerUL">
+      <li class="footerLI"><a class="footerAT" href="https://www.facebook.com/warwickdatascience"><i class="fab fa-facebook-square"></i></a></li>
+      <li class="footerLI"><a class="footerAT" href="https://www.linkedin.com/company/warwick-data-science-society/"><i class="fab fa-linkedin"></i></a></li>
+      <li class="footerLI"><a class="footerAT" href="https://www.instagram.com/warwick_data_science/"><i class="fab fa-instagram"></i></a></li>
+      <!-- <li class="footerLI"><a class="footerAT" href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>  -->
+      <li class="footerLI"><a class="footerAT" href="mailto:warwickdatascience@gmail.com">Mail</a></li>
+    </ul>
+  </div>
 </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="nav.js"></script>
     <script type="text/javascript" src="Scroll.js"></script>
 
+    <!-- for the popup - delete after full implementation -->
+    <script>
+      function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+      function myFunction2() {
+        var popup = document.getElementById("myPopup2");
+        popup.classList.toggle("show");
+      }
+    </script>
+
 <!-- https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_startup -->
-   </body>
-</html>
+
+</body></html>
