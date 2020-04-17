@@ -4,11 +4,11 @@
 }
 
 header {
-  background-color: var(--mgp);
-  width: 100%;
   margin: 0 auto;
-  height: 49px;
+  position: fixed;
+  z-index: 10;
 }
+
 body {
   background-color: #23144F;
   font-family: sans-serif;
