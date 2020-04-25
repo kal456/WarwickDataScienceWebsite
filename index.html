@@ -1,10 +1,23 @@
-<html lang="en" dir="ltr"><head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/XFbMRQK/55470268-183450445871313-5350417395452215296-n.jpg">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/b0e45b6dae.js"></script>
+    
     <title>Warwick Data Science</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/img/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <script src="https://kit.fontawesome.com/b0e45b6dae.js"></script>
   </head>
   <body>
     <header>
@@ -20,16 +33,16 @@
         <ul id="menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#home"><div class="popup" onclick="myFunction()">Our Team
-              <span class="popuptext" id="myPopup">Section coming soon</span></div></a></li>
-          <li><a href="#home"><div class="popup" onclick="myFunction2()">Contact
-              <span class="popuptext" id="myPopup2">Section coming soon</span></div></a></li>
+          <li><a><div class="popup" id="team-button" onclick="togglePopup(this.id)">Our Team
+              <span class="popuptext">Section coming soon</span></div></a></li>
+          <li><a><div class="popup" id="contact-button" onclick="togglePopup(this.id)">Contact
+              <span class="popuptext">Section coming soon</span></div></a></li>
         </ul>
       </nav>
     </header>
 
 <!-- Header image and Titles -->
-<header class="bgImage w3-display-container w3-grayscale-min" id="home">
+<div class="bgImage w3-display-container w3-grayscale-min" id="home">
   <div class="w3-display-left w3-text-white" style="padding:48px">
     <!-- TODO We will need to replace all div's so we can make it SEO compatible -->
     <span class="w3-jumbo">Warwick Data Science</span><br>
@@ -45,7 +58,7 @@
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div> -->
-</header>
+</div>
 
 <!-- About Us Section -->
 <div class="w3-container w3-light-grey" style="padding:128px 16px" id="about">
@@ -83,13 +96,14 @@
 
     <!-- for the popup - delete after full implementation -->
     <script>
-      function myFunction() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-      }
-      function myFunction2() {
-        var popup = document.getElementById("myPopup2");
-        popup.classList.toggle("show");
+      function togglePopup(clickedID) {
+        const clickedElem = document.getElementById(clickedID)
+        const popup = clickedElem.firstElementChild
+        popup.classList.toggle("show")
+        if (popup.classList.contains("show")) {
+          setTimeout(function() {popup.classList.remove("show")},
+                     2000)
+        }
       }
     </script>
 
