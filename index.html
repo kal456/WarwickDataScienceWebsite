@@ -116,9 +116,63 @@
             <label for="message">Message</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action" style="background: var(--wds)">Submit
+      <button class="btn waves-effect waves-light" id="sendEmailButton" type="submit" name="action" style="background: var(--wds)">Submit
         <i class="material-icons right">send</i>
       </button>
+      <div id="sentMessageText"></div>
+      <script>
+        var nameOfUser = document.getElementById("full_name");
+        var addressOfUser = document.getElementById("email");
+        var subjectSent = document.getElementById("subject");
+        var messageSent = document.getElementById("message");
+        var url = 'https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbzFdrQG6gIzCdRvwyAljscJpKKt653WZR-CwZCsGvHuKwaN2wCo/exec';
+        var sendEmailButton = document.getElementById("sendEmailButton");
+        var printText = document.getElementById("sentMessageText");
+        
+        sendEmailButton.addEventListener("click", function() {
+        
+          event.preventDefault();
+    
+          printText.insertAdjacentHTML('beforeend', "Message was sent");
+    
+          var json = {
+            sender_name: nameOfUser.value,
+	          sender_address: addressOfUser.value,
+	          subject: subjectSent.value,
+            message: messageSent.value
+          }
+
+          console.log("Creating Request and sending " + JSON.stringify(json));
+
+         var ourRequest = new XMLHttpRequest();
+          ourRequest.open('POST', url);
+          ourRequest.setRequestHeader('X-PINGOTHER', 'pingpong');
+          ourRequest.setRequestHeader('Content-Type', 'application/xml');
+         ourRequest.onload = function() {
+           if (ourRequest.status >= 200 && ourRequest.status < 400) {
+               console.log("Connected to the Server.");
+             // var ourData = JSON.parse(ourRequest.responseText);
+             // renderHTML(ourData);
+           } else {
+             console.log("We connected to the server, but it returned an error.");
+           }
+         };
+        ourRequest.onerror = function() {
+          console.log("Connection error");
+        };
+        ourRequest.setRequestHeader('Content-Type', 'application/json');
+        console.log("Sending");
+        ourRequest.send(JSON.stringify(json));
+      });
+      /*
+        Checks email address string against regular expression and returns a bool.
+        Source: https://stackoverflow.com/a/46181
+      */
+        function validateEmail(email) {
+          var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(String(email).toLowerCase());
+        }
+      </script>
     </form>
   </div>
   <br>
