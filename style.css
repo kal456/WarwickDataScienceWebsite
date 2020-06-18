@@ -99,7 +99,6 @@ ul#menu li a {
   font-size: 14px;
   background-color: white;
   color: black;
-  padding: 1.1em 1.6em;
   transition: background 0.2s;
   text-decoration: none;
 }
@@ -232,6 +231,11 @@ ul.hamburger li:nth-child(2) {
   }
 }
 
+.contactTextHeader{
+  padding-right: 150px;
+  padding-left: 150px;
+}
+
 
 @media screen and (min-width: 800px){
   .bgImage{
@@ -283,11 +287,11 @@ ul.hamburger li:nth-child(2) {
     position: absolute;
   }
 
-  .nav ul#menu {
+  ul#menu {
     display: inline;
     float: right;
   }
-  .nav ul#menu li {
+  ul#menu li {
     display: inline-block;
     margin-right: -5px;
     height: 52px;
