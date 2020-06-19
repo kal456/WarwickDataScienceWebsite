@@ -93,7 +93,7 @@
   </div>
   <!-- Contact form made with Materialize-->
   <div class="row" style="padding: 0px 150px">
-    <form class="col s12">
+    <form name="contact" class="col s12">
       <div class="row">
         <div class="input-field col s6">
           <input id="full_name" type="text" class="validate" required>
@@ -130,8 +130,13 @@
         var printText = document.getElementById("sentMessageText");
         
         sendEmailButton.addEventListener("click", function() {
-        
+          
           event.preventDefault();
+
+           // Return false if the form is not valid, otherwise the HTTP request is made
+           if (validateForm() == false) {
+            return false;
+          }
     
           printText.insertAdjacentHTML('beforeend', "Message was sent");
     
@@ -171,6 +176,19 @@
         function validateEmail(email) {
           var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
           return re.test(String(email).toLowerCase());
+        }
+
+        // Check if the attributes are empty or not
+        function validateForm() {
+          var name = document.forms["contact"]["full_name"].value;
+          var email = document.forms["contact"]["email"].value;
+          var message = document.forms["contact"]["message"].value;
+
+          if (name == "" || email == "" || message == "") {
+            alert("Details are missing in the contact form.");
+            return false;
+          }
+          return true;
         }
       </script>
     </form>
